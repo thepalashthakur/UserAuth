@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
-const User = require('../models/user');
-const formatUser = require('../utils/formatUser');
+const User = require('../../../models/user');
+const formatUser = require('../../../utils/formatUser');
 
 function validatePhone(phoneNumber) {
   return /^\d{10}$/.test(phoneNumber);

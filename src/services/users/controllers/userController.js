@@ -1,8 +1,8 @@
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
-const User = require('../models/user');
-const formatUser = require('../utils/formatUser');
-const { validatePhone, validateCountryCode } = require('./authController');
+const User = require('../../../models/user');
+const formatUser = require('../../../utils/formatUser');
+const { validatePhone, validateCountryCode } = require('../../auth/controllers/authController');
 
 async function updateUser(req, res, next) {
   try {

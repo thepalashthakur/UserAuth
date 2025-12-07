@@ -1,8 +1,9 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const sessionMiddleware = require('./config/session');
-const authRoutes = require('./routes/authRoutes');
-const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./services/auth/routes/authRoutes');
+const userRoutes = require('./services/users/routes/userRoutes');
+const entryRoutes = require('./services/entries/routes/entryRoutes');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -17,6 +18,7 @@ app.get('/health', (_req, res) => {
 
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
+app.use('/entries', entryRoutes);
 
 app.use((err, _req, res, _next) => {
   // Generic error handler to avoid leaking stack traces.

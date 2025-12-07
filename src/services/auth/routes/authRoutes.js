@@ -8,8 +8,8 @@ const {
   resetPassword,
   changePassword,
 } = require('../controllers/authController');
-const { requireAuth } = require('../middleware/auth');
-const loginRateLimit = require('../middleware/loginRateLimit');
+const { requireAuth } = require('../../../middleware/auth');
+const loginRateLimit = require('../../../middleware/loginRateLimit');
 
 const router = express.Router();
 
